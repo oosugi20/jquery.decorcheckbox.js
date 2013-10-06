@@ -5,8 +5,51 @@
 <title>jquery.decorcheckbox.js Sample</title>
 <script src="../lib/jquery.js"></script>
 <script src="../dest/jquery.decorcheckbox.js"></script>
+<style>
+[data-decorcheckbox] {
+	overflow: hidden;
+}
+[data-decorcheckbox-btn] {
+}
+.checked [data-decorcheckbox-btn] {
+	background: #FCC;
+}
+</style>
+<script>
+$(function () {
+	$('[data-decorcheckbox]').decorcheckbox();
+});
+</script>
 </head>
 
 <body>
+<p>CSSでチェックボックスは飛ばして、a要素にスタイル当てて使う。</p>
+<pre><code>
+[data-decorcheckbox] {
+	overflow: hidden;
+}
+[data-decorcheckbox-input] {
+	position: absolute;
+	left: -9999px;
+	width: 1px;
+}
+</code></pre>
+<div data-decorcheckbox>
+<a href="#" data-decorcheckbox-btn>チェックボックス</a>
+<input id="sample" name="sample" type="checkbox" data-decorcheckbox-input>
+</div>
+
+
+<p>if want init checked, add `data-decorcheckbox-state="checked"`</p>
+<div data-decorcheckbox data-decorcheckbox-state="checked">
+<a href="#" data-decorcheckbox-btn>チェックボックス</a>
+<input id="sample" name="sample" type="checkbox" data-decorcheckbox-input>
+</div>
+
+<script>
+$('[data-decorcheckbox-input]').on('change', function () {
+	console.log('input:changed', $(this).is(':checked'));
+});
+</script>
 </body>
 </html>
