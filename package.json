@@ -1,6 +1,6 @@
 {
   "name": "jquery.decorcheckbox.js",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "装飾チェックボックス",
   "main": "Gruntfile.js",
   "author": "Makoto OOSUGI <oosugi20@gmail.com>",
